@@ -1,0 +1,135 @@
+npm install react-router-dom
+
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import QuestionPage from './QuestionPage';
+
+function App() {
+  return (
+    <Router>
+      <div>
+        <h1>방방곡곡</h1>
+        <h2>맞는 국내 여행지를 찾아보세요</h2>
+        <Link to="/question">테스트 시작하기</Link>
+      </div>
+
+      <Switch>
+        <Route path="/question">
+          <QuestionPage />
+        </Route>
+      </Switch>
+    </Router>
+  );
+}
+
+export default App;
+
+
+function QuestionPage() {
+  return (
+    <div>
+      <h1>Q1.</h1>
+      <h2>셀레는 여행이제 도착 했을 때, 마주하고 싶은 풍경은?</h2>
+      <div>
+        <input type="radio" id="scenicView" name="landscape" value="scenicView" />
+        <label htmlFor="scenicView">높은 곳에서 내려다 보는 경치</label>
+      </div>
+      <div>
+        <input type="radio" id="endlessSea" name="landscape" value="endlessSea" />
+        <label htmlFor="endlessSea">끝없이 펼쳐진 바다</label>
+      </div>
+    </div>
+  );
+}
+
+export default QuestionPage;
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+function QuestionPage() {
+  return (
+    <div>
+      <h1>Q2.</h1>
+      <h2>여행을 가서 나는 주로</h2>
+      <div>
+        <input type="radio" id="activeActivities" name="preference" value="activeActivities" />
+        <label htmlFor="activeActivities">활동적인 것들을 하고 싶다!</label>
+      </div>
+      <div>
+        <input type="radio" id="relaxing" name="preference" value="relaxing" />
+        <label htmlFor="relaxing">여유롭게 쉬는 게 좋다!</label>
+      </div>
+      <Link to="/result">결과 보기</Link>
+    </div>
+  );
+}
+
+export default QuestionPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 수정 가능 항목 
+import React from 'react';
+
+function ResultPage() {
+  return (
+    <div>
+      <h1>결과 페이지</h1>
+      {/* 여기에 결과에 따른 컨텐츠를 추가할 수 있습니다 */}
+    </div>
+  );
+}
+
+export default ResultPage;
+
+
+
+
+
+
+
+# 필요한 페이지 계속해서 추가하기 
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import QuestionPage from './QuestionPage';
+import ResultPage from './ResultPage';
+
+function App() {
+  return (
+    <Router>
+      <div>
+        <h1>방방곡곡</h1>
+        <h2>맞는 국내 여행지를 찾아보세요</h2>
+        <Link to="/question">테스트 시작하기</Link>
+      </div>
+
+      <Switch>
+        <Route path="/question">
+          <QuestionPage />
+        </Route>
+        <Route path="/result">
+          <ResultPage />
+        </Route>
+      </Switch>
+    </Router>
+  );
+}
+
+export default App;
+
+
+
+
+
